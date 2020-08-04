@@ -1,1 +1,15 @@
-<p>dashboard works!</p>
+<section id="DashboardSection">
+  <p-toolbar>
+    <div class="p-toolbar-group-left">
+      <i class="pi pi-bars" style="font-size: 1.5rem;" (click)="toggleSideBarVisibility()"></i>
+    </div>
+    <div class="p-toolbar-group-right">
+      <i class="pi pi-user" style="font-size: 1.5rem; margin-right: 5px;"></i>
+      <span style="padding: 10px;">Welcome Ryan</span>
+    </div>
+  </p-toolbar>
+
+</section>
+<p-sidebar [(visible)]="isSidebarDisplayed" [dismissible]="true" [showCloseIcon]="false">
+  Content
+</p-sidebar>

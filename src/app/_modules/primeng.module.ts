@@ -5,6 +5,8 @@ import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { SidebarModule } from 'primeng/sidebar'
+import { ToolbarModule } from 'primeng/toolbar'
 
 const primeModules = [
   ButtonModule,
@@ -12,7 +14,9 @@ const primeModules = [
   TableModule,
   DialogModule,
   MessagesModule,
-  MessageModule
+  MessageModule,
+  SidebarModule,
+  ToolbarModule
 ];
 
 @NgModule({

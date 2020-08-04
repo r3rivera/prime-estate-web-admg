@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+
+@import './assets/app.reset.style.scss';
+@import './assets/app.login.style.scss';
+@import './assets/app.dashboard.style.scss';
+
 *{
   font-family: 'Roboto', sans-serif;
 }
-
-@import './assets/app.login.style.scss';

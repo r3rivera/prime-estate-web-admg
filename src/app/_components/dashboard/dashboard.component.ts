@@ -1,16 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'r3app-dashboard',
   templateUrl: './dashboard.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  isSidebarDisplayed: boolean;
 
-  ngOnInit(): void {
+  toggleSideBarVisibility(): void {
+    this.isSidebarDisplayed = !this.isSidebarDisplayed;
+  }
+
+  constructor() {}
+
+  ngOnInit() {
   }
 
 }
