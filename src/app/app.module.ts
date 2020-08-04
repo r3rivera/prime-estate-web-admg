@@ -13,6 +13,8 @@ import { DashboardComponent } from './_components/dashboard/dashboard.component'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { LandingComponent } from './_components/landing/landing.component';
 import { PrimeNgModule } from './_modules/primeng.module';
+import { RealestateComponent } from './_components/dashboard/realestate/realestate.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { PrimeNgModule } from './_modules/primeng.module';
     ContactusComponent,
     SignupComponent,
     DashboardComponent,
-    LandingComponent
+    LandingComponent,
+    RealestateComponent
   ],
   imports: [
     BrowserModule,

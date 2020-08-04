@@ -5,8 +5,7 @@ import { AuthenticateService } from 'src/app/_services/security/authenticate.ser
 @Component({
   selector: 'r3app-login',
   templateUrl: './login.component.html',
-  styles: [
-  ]
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 

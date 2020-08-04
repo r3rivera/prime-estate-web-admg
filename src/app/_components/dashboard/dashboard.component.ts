@@ -4,7 +4,7 @@ import { MenuItem } from 'primeng/api';
 @Component({
   selector: 'r3app-dashboard',
   templateUrl: './dashboard.component.html',
-  styles: [],
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
   constructor() {}
