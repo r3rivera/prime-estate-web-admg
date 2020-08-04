@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
+  production: false,
   api: "/real-estate",
   domain: "http://localhost:8080",
   appCode:"4season"
