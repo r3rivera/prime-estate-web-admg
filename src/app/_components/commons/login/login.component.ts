@@ -40,14 +40,14 @@ export class LoginComponent implements OnInit {
 
   }
 
-  isNotValidField(field:string){
+  isNotValidField(field:string) : boolean{
     if(this.loginSubmitted && this.loginForm.get(field) && this.loginForm.get(field).hasError('required')){
       return true;
     }
     return false;
   }
 
-  isNotValidEmailFiled(field:string){
+  isNotValidEmailFiled(field:string) : boolean{
     if(this.loginSubmitted && this.loginForm.get(field) && this.loginForm.get(field).hasError('email')){
       return true;
     }
