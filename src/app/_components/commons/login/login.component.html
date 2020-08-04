@@ -1,0 +1,28 @@
+<section id="LoginSection" class="login-container">
+  <div class="login-container-panel p-shadow-10">
+    <form [formGroup]="loginForm" (ngSubmit)="onLoginUser()" style="padding: 10px">
+      <div class="p-grid">
+        <div class="p-col p-field">
+          <span class="p-float-label">
+            <input type="text" id="usernametext" pInputText formControlName="username" class="login-container-panel-item">
+            <label for="usernametext">Email address</label>
+          </span>
+        </div>
+      </div>
+      <div class="p-grid">
+        <div class="p-col p-field">
+          <span class="p-float-label">
+            <input type="text" id="paswordtext" pInputText formControlName="password" class="login-container-panel-item">
+            <label for="paswordtext">Password</label>
+          </span>
+        </div>
+      </div>
+      <div class="p-grid p-align-center" style="padding: 10px 0;">
+        <div class="p-col">
+          <button class="login-panel-content-button" pButton type="submit" label="LOGIN"></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
