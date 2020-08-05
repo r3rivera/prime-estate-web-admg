@@ -8,9 +8,10 @@ import { AppComponent } from './app.component';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PrimeNgModule } from './_modules/primeng.module';
-import { DashboardComponent, RealestateComponent, ProfileMenuComponent} from './_components/dashboard';
+import { DashboardComponent, ProfileMenuComponent, OverviewComponent, RealestateComponent } from './_components/dashboard';
 import { LoginComponent, ContactusComponent, SignupComponent } from './_components/commons';
 import { LandingComponent } from './_components/landing';
+import { AddRealestateComponent } from './_components/dashboard/realestate/add-realestate/add-realestate.component';
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import { LandingComponent } from './_components/landing';
     DashboardComponent,
     LandingComponent,
     RealestateComponent,
-    ProfileMenuComponent
+    ProfileMenuComponent,
+    OverviewComponent,
+    AddRealestateComponent
   ],
   imports: [
     BrowserModule,

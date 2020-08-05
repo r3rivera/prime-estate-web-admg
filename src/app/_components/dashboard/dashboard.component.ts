@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
       {
         label: 'Real Estate Management',
         items: [
-          { label: 'Real Estate', icon: 'pi pi-fw pi-home' },
+          { label: 'Real Estate', icon: 'pi pi-fw pi-home', routerLink: '/dashboard/real-estates'},
           { label: 'Thrid Party', icon: 'pi pi-fw pi-globe' },
         ],
       },
