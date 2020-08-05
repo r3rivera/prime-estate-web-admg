@@ -14,6 +14,9 @@ export class AuthzGuard implements CanActivate {
   ) {}
 
 
+  /*
+   * Validate that the active route is accessible to the current user based on the user's role.
+   */
   canActivate( route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
@@ -21,7 +24,7 @@ export class AuthzGuard implements CanActivate {
       console.log(JSON.stringify(currentUser));
       if (currentUser && currentUser.username) {
 
-          if (route.data.roles) {
+          if (route.data?.roles) {
 
             if(this.hasUserRole(route.data.roles)){
               // role not authorised so redirect to home page
@@ -29,9 +32,9 @@ export class AuthzGuard implements CanActivate {
               console.log("Not Authorized!");
               return false;
             }
-        }
+          }
 
-        // authorised so return true
+        // Handles routes where there is no roles needed to access the route defined in the app routing module.
         return true;
       }
 

@@ -79,6 +79,16 @@ export class AuthenticateService extends BaseService{
   }
 
   public get currentAuthUser(): AuthUser{
+
+    /*
+     * Need look at the local storage if there is an existing user. If we don't have this check, any
+     * users who accidentally refreshed the page using F5 key will redirect them to the login screen.
+     */
+    if(localStorage.getItem('currentUser')){
+      const cachedUser: AuthUser = JSON.parse(localStorage.getItem('currentUser'));
+      this.currUser.next(cachedUser);
+    }
+
     return this.currUser.value;
   }
 }

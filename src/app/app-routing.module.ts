@@ -14,7 +14,7 @@ const routes: Routes = [
     { path: '', component: OverviewComponent },
     { path: 'real-estates', component: RealestateComponent },
     { path: 'create-estates', component: AddRealestateComponent },
-  ], canActivate: [ AuthzGuard ], data:{roles:["4SSN-APP-PROPERTY-MANAGER","4SSN-APP-SUPER-ADMIN"]} },
+  ], canActivate: [ AuthzGuard ], data:{roles:["4SSN-APP-PROPERTY-MANAGER","4SSN-APP-SUPER-ADMIN",,"4SSN-APP-PROP-OWNER"]} },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'contactus', component: ContactusComponent }
