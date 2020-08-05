@@ -9,6 +9,7 @@ import { AuthenticateService } from 'src/app/_services/security/authenticate.ser
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { first } from 'rxjs/operators';
+import { AlertService } from 'src/app/_services/notification/alert.service';
 
 @Component({
   selector: 'r3app-login',
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
     private _authService: AuthenticateService,
+    private _alertService: AlertService,
     private _route: ActivatedRoute,
     private _router: Router
   ) {}
@@ -46,6 +48,7 @@ export class LoginComponent implements OnInit {
       return;
     }
 
+    this._alertService.clear();
     const username: string = this.loginForm.get('username').value;
     const password: string = this.loginForm.get('password').value;
 
@@ -57,7 +60,15 @@ export class LoginComponent implements OnInit {
         (data) => {
           this._router.navigate([this.returnUrl]);
         },
-        (error) => {}
+        (error) => {
+          console.log(`Handling error response :: ${JSON.stringify(error)}`);
+          this._alertService.error({
+            "code": error.code,
+            "message" : error.message,
+            "type": "error"
+          });
+          this.loginSubmitted = false;
+        }
       );
   }
 

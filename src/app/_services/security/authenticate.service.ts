@@ -20,6 +20,13 @@ export class AuthenticateService extends BaseService{
     super();
   }
 
+
+
+  /**
+   * Authenticates the user using their credentials
+   * @param username
+   * @param password
+   */
   authenticateUser(username: string, password: string): Observable<AuthUser>{
 
     const url = `${this.getApiEndpoint("/authenticate")}`;
@@ -51,8 +58,16 @@ export class AuthenticateService extends BaseService{
   }
 
 
+  /**
+   * Sign up a new user to the application
+   *
+   */
   signUpUser(): void{
 
+  }
+
+  public get currentAuthUser(): AuthUser{
+    return this.currUser.value;
   }
 }
 
