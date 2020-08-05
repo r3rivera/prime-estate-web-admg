@@ -21,17 +21,24 @@ export class DashboardComponent implements OnInit {
 
     this.menuItems = [
       {
-        label: 'Management',
+        label: 'Real Estate Management',
         items: [
           { label: 'Real Estate', icon: 'pi pi-fw pi-home' },
-          { label: 'Download', icon: 'pi pi-fw pi-download' },
+          { label: 'Thrid Party', icon: 'pi pi-fw pi-globe' },
         ],
       },
       {
         label: 'Tenants and Owners',
         items: [
-          { label: 'Add User', icon: 'pi pi-fw pi-user-plus' },
-          { label: 'Remove User', icon: 'pi pi-fw pi-user-minus' },
+          { label: 'Tenant Application', icon: 'pi pi-fw pi-user-plus' },
+          { label: 'Manage Tenant and Owners', icon: 'pi pi-fw pi-users' },
+        ],
+      },
+      {
+        label: 'Service Request',
+        items: [
+          { label: 'My Contractors', icon: 'pi pi-fw pi-folder'},
+          { label: 'Manage Service Request', icon: 'pi pi-fw pi-ticket' },
         ],
       },
     ];

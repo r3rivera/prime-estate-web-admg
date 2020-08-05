@@ -6,14 +6,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { LoginComponent } from './_components/commons/login/login.component';
-import { ContactusComponent } from './_components/commons/contactus/contactus.component';
-import { SignupComponent } from './_components/commons/signup/signup.component';
-import { DashboardComponent } from './_components/dashboard/dashboard.component'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { LandingComponent } from './_components/landing/landing.component';
 import { PrimeNgModule } from './_modules/primeng.module';
-import { RealestateComponent } from './_components/dashboard/realestate/realestate.component';
+import { DashboardComponent, RealestateComponent, ProfileMenuComponent} from './_components/dashboard';
+import { LoginComponent, ContactusComponent, SignupComponent } from './_components/commons';
+import { LandingComponent } from './_components/landing';
 
 
 @NgModule({
@@ -24,7 +21,8 @@ import { RealestateComponent } from './_components/dashboard/realestate/realesta
     SignupComponent,
     DashboardComponent,
     LandingComponent,
-    RealestateComponent
+    RealestateComponent,
+    ProfileMenuComponent
   ],
   imports: [
     BrowserModule,
