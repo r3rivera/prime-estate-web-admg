@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PrimeNgModule } from './_modules/primeng.module';
 import { DashboardComponent, ProfileMenuComponent, OverviewComponent, RealestateComponent } from './_components/dashboard';
-import { LoginComponent, ContactusComponent, SignupComponent } from './_components/commons';
+import { LoginComponent, ContactusComponent, SignupComponent, AlertComponent } from './_components/common';
 import { LandingComponent } from './_components/landing';
 import { AddRealestateComponent } from './_components/dashboard/realestate/add-realestate/add-realestate.component';
 
@@ -26,7 +26,8 @@ import { AddRealestateComponent } from './_components/dashboard/realestate/add-r
     RealestateComponent,
     ProfileMenuComponent,
     OverviewComponent,
-    AddRealestateComponent
+    AddRealestateComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

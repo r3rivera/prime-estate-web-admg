@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent, SignupComponent, ContactusComponent } from './_components/commons';
+import { LoginComponent, SignupComponent, ContactusComponent } from './_components/common';
 
 import { DashboardComponent } from './_components/dashboard/dashboard.component';
 import { LandingComponent } from './_components/landing/landing.component';
