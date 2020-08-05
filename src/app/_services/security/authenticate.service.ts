@@ -57,6 +57,18 @@ export class AuthenticateService extends BaseService{
     }));
   }
 
+  logoutUser(): boolean{
+    this.currUser.next(ANONYMOUS_USER);
+    if(this.currUser.value.username === undefined){
+      localStorage.removeItem('currentUser');
+      console.log("Cleared storage of user!");
+    }
+
+    if(!localStorage.getItem('currentUser')){
+      return true;
+    }
+    return false;
+  }
 
   /**
    * Sign up a new user to the application
