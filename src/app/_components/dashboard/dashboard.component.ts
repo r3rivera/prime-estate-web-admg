@@ -4,7 +4,7 @@ import { MenuItem } from 'primeng/api';
 @Component({
   selector: 'r3app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
   constructor() {}
@@ -18,17 +18,24 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.menuItems = [
       {
         label: 'Real Estate Management',
         items: [
           {
-              label: 'Real Estate',
-              icon: 'pi pi-fw pi-home',
-              routerLink: ['/dashboard/real-estates'],
-              routerLinkActiveOptions: { exact: true },
-              styleClass:'sidebar-menus'},
+            label: 'Real Estate',
+            icon: 'pi pi-fw pi-home',
+            routerLink: ['/dashboard/real-estates'],
+            routerLinkActiveOptions: { exact: true },
+            styleClass: 'sidebar-menus',
+          },
+          {
+            label: 'New Estate',
+            icon: 'pi pi-fw pi-home',
+            routerLink: ['/dashboard/create-estates'],
+            routerLinkActiveOptions: { exact: true },
+            styleClass: 'sidebar-menus',
+          },
           { label: 'Thrid Party', icon: 'pi pi-fw pi-globe' },
         ],
       },
@@ -42,14 +49,10 @@ export class DashboardComponent implements OnInit {
       {
         label: 'Service Request',
         items: [
-          { label: 'My Contractors', icon: 'pi pi-fw pi-folder'},
+          { label: 'My Contractors', icon: 'pi pi-fw pi-folder' },
           { label: 'Manage Service Request', icon: 'pi pi-fw pi-ticket' },
         ],
       },
     ];
-
-
-
-
   }
 }

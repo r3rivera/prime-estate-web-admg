@@ -1,3 +1,7 @@
+#DashboardSection{
+  background: var(--surface-c);
+}
+
 .sidebar{
   &-header{
     box-sizing: border-box;
@@ -8,4 +12,5 @@
     width: 100%;
   }
 }
+
 

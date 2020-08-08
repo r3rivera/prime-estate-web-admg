@@ -8,6 +8,8 @@ import { MessageModule } from 'primeng/message';
 import { SidebarModule } from 'primeng/sidebar';
 import { ToolbarModule } from 'primeng/toolbar';
 import { MenuModule } from 'primeng/menu';
+import { FileUploadModule } from 'primeng/fileupload';
+import { InputNumberModule } from 'primeng/inputnumber'
 
 const primeModules = [
   ButtonModule,
@@ -18,7 +20,9 @@ const primeModules = [
   MessageModule,
   SidebarModule,
   ToolbarModule,
-  MenuModule
+  MenuModule,
+  FileUploadModule,
+  InputNumberModule
 ];
 
 @NgModule({

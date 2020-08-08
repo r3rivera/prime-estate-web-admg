@@ -12,8 +12,9 @@
   <!-- Dashboard Children Routes-->
   <router-outlet></router-outlet>
 
+  <p-sidebar [(visible)]="isSidebarDisplayed" [dismissible]="true" [showCloseIcon]="false">
+    <h2 class="sidebar-header">4 Season LLC</h2>
+    <p-menu [popup]="false" [model]="menuItems" [style]="{width:'18em'}"></p-menu>
+  </p-sidebar>
 </section>
-<p-sidebar [(visible)]="isSidebarDisplayed" [dismissible]="true" [showCloseIcon]="false">
-  <h2 class="sidebar-header">4 Season LLC</h2>
-  <p-menu [popup]="false" [model]="menuItems" [style]="{width:'18em'}"></p-menu>
-</p-sidebar>
+

@@ -1,1 +1,80 @@
-<p>add-realestate works!</p>
+<div class="layout-content">
+
+  <div class="p-grid">
+
+    <div class="p-col-12 p-md-4 p-lg-6">
+
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-12">
+          <h3 class="sub-heading">Property Address</h3>
+        </div>
+        <div class="p-field p-col-12 p-md-6">
+          <label for="streetname1">Street Name</label>
+          <input id="streetname1" type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-md-6">
+          <label for="streetname2">Apt/Suite</label>
+          <input id="streetname2" type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-md-6">
+          <label for="city">City</label>
+          <input id="city" type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-md-3">
+          <label for="state">State</label>
+          <input id="state" type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-md-3">
+          <label for="zip">Zip Code</label>
+          <input id="zip" type="text" pInputText>
+        </div>
+
+        <div class="p-field p-col-12">
+          <h3 class="sub-heading">Amenities</h3>
+        </div>
+        <div class="p-field p-col-12 p-md-3">
+          <label for="area">Area</label>
+          <p-inputNumber id="area" mode="decimal"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-md-3">
+          <label for="beds">Beds</label>
+          <p-inputNumber id="beds" ></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-md-3">
+          <label for="baths">Bath</label>
+          <p-inputNumber id="baths" ></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-md-3">
+          <label for="garage">Garage</label>
+          <p-inputNumber id="garage" ></p-inputNumber>
+        </div>
+
+        <div class="p-field p-col-12">
+          <h3 class="sub-heading">Settings</h3>
+        </div>
+        <div class="p-field p-col-12 p-md-6">
+          <label for="price">Price</label>
+          <p-inputNumber id="price" ></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-md-3">
+          <label for="type">Property Type</label>
+          <p-inputNumber id="type" mode="decimal"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-md-3">
+          <label for="status">Status</label>
+          <p-inputNumber id="status" ></p-inputNumber>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Start Image Column-->
+    <div class="p-col-12 p-md-4 p-lg-6">
+      <p-fileUpload name="myfile[]" chooseLabel="Real-Estate Images" url="" multiple="multiple" accept="image/*" [auto]="true"></p-fileUpload>
+    </div>
+
+  </div>
+
+
+
+</div>
