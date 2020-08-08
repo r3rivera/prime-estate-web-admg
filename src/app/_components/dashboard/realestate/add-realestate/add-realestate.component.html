@@ -58,7 +58,7 @@
         </div>
         <div class="p-field p-col-12 p-md-3">
           <label for="type">Property Type</label>
-          <p-inputNumber id="type" mode="decimal"></p-inputNumber>
+          <p-dropdown [options]="propertyType" optionLabel="type"></p-dropdown>
         </div>
         <div class="p-field p-col-12 p-md-3">
           <label for="status">Status</label>

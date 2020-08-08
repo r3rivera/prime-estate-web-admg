@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UtilityService, UStateCode, PropertyType } from 'src/app/_services/shared';
+
 
 @Component({
   selector: 'r3app-add-realestate',
@@ -9,7 +11,14 @@ export class AddRealestateComponent implements OnInit {
 
   constructor() { }
 
+  stateCode: UStateCode[];
+  propertyType: PropertyType[];
+  propertyStatus: string[];
+
   ngOnInit(): void {
+    this.stateCode = UtilityService.getStateNameCode();
+    this.propertyType = UtilityService.getRealEstatePropertyType();
+    this.propertyStatus = UtilityService.getRealEstatePropertyStatus();
   }
 
 }
