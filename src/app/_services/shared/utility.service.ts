@@ -1,13 +1,12 @@
 export class UtilityService{
 
 
-  static getRealEstatePropertyStatus(): string[]{
+  static getRealEstatePropertyStatus(): {label: string; value: string}[]{
       return [
-          "Active",
-          "Pending"
-      ]
-  };
-
+          {"label": "Active", "value":"Active"},
+          {"label": "Pending", "value":"Pending"}
+      ];
+    }
 
   /**
   COMMERCIAL("Commercial", "COM"),

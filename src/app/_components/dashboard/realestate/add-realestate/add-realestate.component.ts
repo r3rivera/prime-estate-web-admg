@@ -13,7 +13,7 @@ export class AddRealestateComponent implements OnInit {
 
   stateCode: UStateCode[];
   propertyType: PropertyType[];
-  propertyStatus: string[];
+  propertyStatus: {label:string, value: string}[];
 
   ngOnInit(): void {
     this.stateCode = UtilityService.getStateNameCode();

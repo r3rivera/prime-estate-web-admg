@@ -22,7 +22,7 @@
         </div>
         <div class="p-field p-col-12 p-md-3">
           <label for="state">State</label>
-          <input id="state" type="text" pInputText>
+          <p-dropdown [options]="stateCode" optionLabel="name" inputId="state"></p-dropdown>
         </div>
         <div class="p-field p-col-12 p-md-3">
           <label for="zip">Zip Code</label>
@@ -52,19 +52,23 @@
         <div class="p-field p-col-12">
           <h3 class="sub-heading">Settings</h3>
         </div>
-        <div class="p-field p-col-12 p-md-6">
+        <div class="p-field p-col-12 p-md-4">
           <label for="price">Price</label>
           <p-inputNumber id="price" ></p-inputNumber>
         </div>
-        <div class="p-field p-col-12 p-md-3">
+        <div class="p-field p-col-12 p-md-4">
           <label for="type">Property Type</label>
-          <p-dropdown [options]="propertyType" optionLabel="type"></p-dropdown>
+          <p-dropdown [options]="propertyType" optionLabel="type" inputId="type"></p-dropdown>
         </div>
-        <div class="p-field p-col-12 p-md-3">
+        <div class="p-field p-col-12 p-md-4">
           <label for="status">Status</label>
-          <p-inputNumber id="status" ></p-inputNumber>
+          <p-dropdown id="status" [options]="propertyStatus" optionLabel="label" inputId="status"></p-dropdown>
         </div>
-
+        <div class="p-field-radiobutton p-col-12">
+          <label for="feature">Featured Property:</label>
+          <p-radioButton name="featureGroup" value="true"  label="Yes" inputId="feature" styleClass="inline-radio"></p-radioButton>
+          <p-radioButton name="featureGroup" value="false" label="No" inputId="feature" styleClass="inline-radio"></p-radioButton>
+        </div>
       </div>
     </div>
 
