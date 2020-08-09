@@ -16,19 +16,23 @@
           <label for="streetname2">Apt/Suite</label>
           <input id="streetname2" type="text" pInputText>
         </div>
-        <div class="p-field p-col-12 p-md-6">
+        <div class="p-field p-col-12 p-md-2">
           <label for="city">City</label>
           <input id="city" type="text" pInputText>
         </div>
-        <div class="p-field p-col-12 p-md-3">
+        <div class="p-field p-col-12 p-md-4">
           <label for="state">State</label>
           <p-dropdown [options]="stateCode" optionLabel="name" inputId="state"></p-dropdown>
         </div>
-        <div class="p-field p-col-12 p-md-3">
+        <div class="p-field p-col-12 p-md-2">
           <label for="zip">Zip Code</label>
           <input id="zip" type="text" pInputText>
         </div>
-
+        <div class="p-field p-col-12 p-md-4">
+          <label for="country">Country</label>
+          <p-dropdown [options]="countryCodes" optionLabel="name" inputId="country"></p-dropdown>
+        </div>
+        <hr>
         <div class="p-field p-col-12">
           <h3 class="sub-heading">Amenities</h3>
         </div>
@@ -48,13 +52,16 @@
           <label for="garage">Garage</label>
           <p-inputNumber id="garage" ></p-inputNumber>
         </div>
-
+        <hr>
         <div class="p-field p-col-12">
           <h3 class="sub-heading">Settings</h3>
         </div>
         <div class="p-field p-col-12 p-md-4">
           <label for="price">Price</label>
-          <p-inputNumber id="price" ></p-inputNumber>
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <p-inputNumber id="price" ></p-inputNumber>
+          </div>
         </div>
         <div class="p-field p-col-12 p-md-4">
           <label for="type">Property Type</label>
