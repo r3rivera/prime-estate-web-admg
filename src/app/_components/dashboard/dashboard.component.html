@@ -1,4 +1,4 @@
-<section id="DashboardSection">
+<section id="DashboardSection" #DashboardSection>
   <p-toolbar>
     <div class="p-toolbar-group-left">
       <i class="pi pi-bars" style="font-size: 1.5rem;" (click)="toggleSideBarVisibility()"></i>
@@ -12,9 +12,8 @@
   <!-- Dashboard Children Routes-->
   <router-outlet></router-outlet>
 
-  <p-sidebar [(visible)]="isSidebarDisplayed" [dismissible]="true" [showCloseIcon]="false">
-    <h2 class="sidebar-header">4 Season LLC</h2>
-    <p-menu [popup]="false" [model]="menuItems" [style]="{width:'18em'}"></p-menu>
-  </p-sidebar>
 </section>
-
+<p-sidebar [(visible)]="isSidebarDisplayed" [dismissible]="true" [showCloseIcon]="false" [appendTo]="DashboardSection">
+  <h2 class="sidebar-header">4 Season LLC</h2>
+  <p-menu [popup]="false" [model]="menuItems" [style]="{width:'18em'}"></p-menu>
+</p-sidebar>
