@@ -12,6 +12,8 @@ import { DashboardComponent, ProfileMenuComponent, OverviewComponent, Realestate
 import { LoginComponent, ContactusComponent, SignupComponent, AlertComponent } from './_components/common';
 import { LandingComponent } from './_components/landing';
 import { AddRealestateComponent } from './_components/dashboard/realestate/add-realestate/add-realestate.component';
+import { HeroComponent } from './_components/landing/hero/hero.component';
+import { CatalogsComponent } from './_components/landing/catalogs/catalogs.component';
 
 
 
@@ -27,7 +29,9 @@ import { AddRealestateComponent } from './_components/dashboard/realestate/add-r
     ProfileMenuComponent,
     OverviewComponent,
     AddRealestateComponent,
-    AlertComponent
+    AlertComponent,
+    HeroComponent,
+    CatalogsComponent
   ],
   imports: [
     BrowserModule,
