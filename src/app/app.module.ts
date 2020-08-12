@@ -10,11 +10,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PrimeNgModule } from './_modules/primeng.module';
 import { DashboardComponent, ProfileMenuComponent, OverviewComponent, RealestateComponent } from './_components/dashboard';
 import { LoginComponent, ContactusComponent, SignupComponent, AlertComponent } from './_components/common';
-import { LandingComponent } from './_components/landing';
 import { AddRealestateComponent } from './_components/dashboard/realestate/add-realestate/add-realestate.component';
-import { HeroComponent } from './_components/landing/hero/hero.component';
-import { CatalogsComponent } from './_components/landing/catalogs/catalogs.component';
-import { TestimonialsComponent } from './_components/landing/testimonials/testimonials.component';
+import { LandingComponent, NavigationComponent, HeroComponent, CatalogsComponent, TestimonialsComponent } from './_components/landing';
+
 
 
 
@@ -33,7 +31,8 @@ import { TestimonialsComponent } from './_components/landing/testimonials/testim
     AlertComponent,
     HeroComponent,
     CatalogsComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

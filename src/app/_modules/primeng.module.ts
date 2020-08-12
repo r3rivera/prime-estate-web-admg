@@ -12,6 +12,9 @@ import { DropdownModule } from 'primeng/dropdown'
 import { FileUploadModule } from 'primeng/fileupload';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { MenubarModule } from 'primeng/menubar';
+
 
 const primeModules = [
   ButtonModule,
@@ -26,7 +29,9 @@ const primeModules = [
   FileUploadModule,
   InputNumberModule,
   DropdownModule,
-  RadioButtonModule
+  RadioButtonModule,
+  BreadcrumbModule,
+  MenubarModule
 ];
 
 @NgModule({
