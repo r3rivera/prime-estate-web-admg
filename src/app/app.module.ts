@@ -14,6 +14,7 @@ import { LandingComponent } from './_components/landing';
 import { AddRealestateComponent } from './_components/dashboard/realestate/add-realestate/add-realestate.component';
 import { HeroComponent } from './_components/landing/hero/hero.component';
 import { CatalogsComponent } from './_components/landing/catalogs/catalogs.component';
+import { TestimonialsComponent } from './_components/landing/testimonials/testimonials.component';
 
 
 
@@ -31,7 +32,8 @@ import { CatalogsComponent } from './_components/landing/catalogs/catalogs.compo
     AddRealestateComponent,
     AlertComponent,
     HeroComponent,
-    CatalogsComponent
+    CatalogsComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule,
