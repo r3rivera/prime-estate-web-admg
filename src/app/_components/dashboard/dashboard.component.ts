@@ -42,8 +42,16 @@ export class DashboardComponent implements OnInit {
       {
         label: 'Tenants and Owners',
         items: [
-          { label: 'Tenant Application', icon: 'pi pi-fw pi-user-plus' },
-          { label: 'Manage Tenant and Owners', icon: 'pi pi-fw pi-users' },
+          {
+            label: 'Tenant Application',
+            icon: 'pi pi-fw pi-user-plus',
+
+          },
+          {
+            label: 'Manage Tenant and Owners',
+            icon: 'pi pi-fw pi-users',
+            routerLink: ['/dashboard/manage-users']
+          },
         ],
       },
       {
