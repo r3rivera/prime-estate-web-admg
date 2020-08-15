@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from 'src/app/_services/notification/alert.service';
 
@@ -14,20 +13,8 @@ export class NavigationComponent implements OnInit {
     private _route: ActivatedRoute,
     private _router: Router){}
 
-  items: MenuItem[];
 
-  home: MenuItem;
-
-  ngOnInit(): void {
-      this.items = [
-          {label: 'Home'},
-          {label: 'Featured Properties'},
-          {label: 'Testimonials'},
-          {label: 'About Us'}
-      ];
-
-      this.home = {icon: 'pi pi-home', routerLink: '/'};
-  }
+  ngOnInit(): void {}
 
   onLogin(): void{
     console.log("Navigating to login screen...");

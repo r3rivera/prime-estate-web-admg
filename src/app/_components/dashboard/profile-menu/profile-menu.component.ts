@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
 import { AuthenticateService } from 'src/app/_services/security/authenticate.service';
 import { Router } from '@angular/router';
 
@@ -10,34 +9,9 @@ import { Router } from '@angular/router';
 })
 export class ProfileMenuComponent implements OnInit {
 
-  profileMenu: MenuItem[];
-
   constructor(private _authservice: AuthenticateService, private _router: Router) {}
 
   ngOnInit(): void {
-    this.profileMenu = [
-      {
-        label: 'Profile',
-        icon: 'pi pi-user',
-        command: () => {
-          this.profile();
-        },
-      },
-      {
-        label: 'Settings',
-        icon: 'pi pi-cog',
-        command: () => {
-          this.profile();
-        },
-      },
-      {
-        label: 'Logout',
-        icon: 'pi pi-sign-out',
-        command: () => {
-          this.logOut();
-        },
-      },
-    ];
   }
 
   public get userName(): string{
