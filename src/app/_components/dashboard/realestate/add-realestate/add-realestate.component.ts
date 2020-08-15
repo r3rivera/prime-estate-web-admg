@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilityService, UStateCode, PropertyType, CountryCode } from 'src/app/_services/shared';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -17,6 +17,9 @@ export class AddRealestateComponent implements OnInit {
   propertyStatus: {label:string, value: string}[];
   countryCodes: CountryCode[]
 
+
+  estateForm: FormGroup;
+
   ngOnInit(): void {
 
 
@@ -25,6 +28,22 @@ export class AddRealestateComponent implements OnInit {
     this.propertyStatus = UtilityService.getRealEstatePropertyStatus();
     this.countryCodes = UtilityService.getCountryCodes();
 
+    this.estateForm = this._formBuilder.group({
+      streetname1: new FormControl(null, [Validators.required]),
+      streetname2: new FormControl(null, [Validators.required]),
+      city: new FormControl(null, [Validators.required]),
+      state: new FormControl(null, [Validators.required]),
+      zip: new FormControl(null, [Validators.required]),
+      country: new FormControl({
+        "name":"United States", "code":"US"
+      }, [Validators.required])
+    });
+
+  }
+
+  onCreateProperty():void{
+    console.log("Creating property...");
+    console.log(JSON.stringify(this.estateForm.value));
 
   }
 
