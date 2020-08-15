@@ -1,9 +1,12 @@
 <mat-toolbar>
-
     <mat-toolbar-row>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <button mat-icon-button class="nav-icon" aria-label="Navigation">
         <mat-icon>menu</mat-icon>
       </button>
+      <span>4 Season Property Management</span>
+      <span class="nav-spacer"></span>
+      <button mat-icon-button class="nav-icon" aria-label="Login" (click)="onLogin()">
+        <mat-icon>login</mat-icon>
+      </button>
     </mat-toolbar-row>
-
 </mat-toolbar>
