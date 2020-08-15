@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { PrimeNgModule } from './_modules/primeng.module';
 import { AppMaterialModule } from './_modules/material.module';
 import { DashboardComponent, ProfileMenuComponent, OverviewComponent, RealestateComponent } from './_components/dashboard';
 import { LoginComponent, ContactusComponent, SignupComponent, AlertComponent } from './_components/common';
@@ -44,7 +43,6 @@ import { ManageUsersComponent } from './_components/dashboard/manage-users/manag
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    PrimeNgModule,
     AppMaterialModule
   ],
   providers: [],

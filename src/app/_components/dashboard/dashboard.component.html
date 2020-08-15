@@ -1,19 +1,7 @@
 <section id="DashboardSection" #DashboardSection>
-  <p-toolbar>
-    <div class="p-toolbar-group-left">
-      <i class="pi pi-bars" style="font-size: 1.5rem;" (click)="toggleSideBarVisibility()"></i>
-    </div>
-    <div class="p-toolbar-group-right">
-      <i class="pi pi-user" style="font-size: 1.5rem; margin-right: 5px;"></i>
-      <span style="padding: 10px;"><r3app-profile-menu></r3app-profile-menu></span>
-    </div>
-  </p-toolbar>
+  <h1>Dashboard Page</h1>
 
   <!-- Dashboard Children Routes-->
   <router-outlet></router-outlet>
 
 </section>
-<p-sidebar [(visible)]="isSidebarDisplayed" [dismissible]="true" [showCloseIcon]="false" [appendTo]="DashboardSection">
-  <h2 class="sidebar-header">4 Season LLC</h2>
-  <p-menu [popup]="false" [model]="menuItems" [style]="{width:'18em'}"></p-menu>
-</p-sidebar>
