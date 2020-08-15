@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageUsersComponent implements OnInit {
 
+  displayAddUserDialog: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  toggleAddUserDialog(): void{
+    this.displayAddUserDialog = !this.displayAddUserDialog;
+  }
+
+
+  onAddUser(){
+    console.log("Adding user...");
+
+  }
+
+
 
 }

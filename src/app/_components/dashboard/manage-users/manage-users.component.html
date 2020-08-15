@@ -1,7 +1,55 @@
 <div class="layout-content">
   <div class="p-grid">
     <div class="p-col-12 p-md-4 p-lg-6">
-      Manage Users
+      <button
+        pButton
+        type="button"
+        icon="pi pi-user"
+        label="Invite Tenant"
+        (click)="toggleAddUserDialog()"
+      ></button>
     </div>
   </div>
 </div>
+
+<p-dialog
+  header="Tenant Information"
+  [(visible)]="displayAddUserDialog"
+  [modal]="true"
+  [style]="{ width: '50vw' }"
+  [transitionOptions]="'1ms'"
+  [closable]="true"
+>
+  <div class="p-grid">
+    <div class="p-col">
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-12 p-md-3">
+          <label for="firstname">First Name</label>
+          <input id="lastname" type="text" pInputText />
+        </div>
+        <div class="p-field p-col-12 p-md-3">
+          <label for="lastname">Last Name</label>
+          <input id="lastname" type="text" pInputText />
+        </div>
+
+        <div class="p-field p-col-12 p-md-3">
+          <label for="phone">Phone Number</label>
+          <input id="phone" type="text" pInputText />
+        </div>
+        <div class="p-field p-col-12 p-md-3">
+          <label for="email">Email address</label>
+          <input id="email" type="text" pInputText />
+        </div>
+      </div>
+    </div>
+  </div>
+  <p-footer>
+    <button
+      pButton
+      type="button"
+      icon="pi pi-user"
+      label="Add User"
+      (click)="onAddUser()"
+    ></button>
+  </p-footer>
+</p-dialog>
