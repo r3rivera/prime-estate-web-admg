@@ -70,10 +70,14 @@
           <label for="status">Status</label>
           <p-dropdown id="status" [options]="propertyStatus" optionLabel="label" inputId="status"></p-dropdown>
         </div>
+        <div class="p-field p-col-12">
+          <h3 class="sub-heading">Featured Property</h3>
+        </div>
         <div class="p-field-radiobutton p-col-12">
-          <label for="feature">Featured Property:</label>
-          <p-radioButton name="featureGroup" value="true"  label="Yes" inputId="feature" styleClass="inline-radio"></p-radioButton>
-          <p-radioButton name="featureGroup" value="false" label="No" inputId="feature" styleClass="inline-radio"></p-radioButton>
+          <label for="feature1">Yes</label>
+          <p-radioButton name="feature" value="true" inputId="feature1" styleClass="inline-radio"></p-radioButton>
+          <label for="feature2">No</label>
+          <p-radioButton name="feature" value="false" inputId="feature2" styleClass="inline-radio"></p-radioButton>
         </div>
       </div>
     </div>
