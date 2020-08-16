@@ -7,9 +7,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
 
+  navlinks: NavLink[] = [
+    {
+      url: '/dashboard/real-estates',
+      name: 'Property Estate',
+      icon: 'home'
+    },
+    {
+      url: '/dashboard/create-estates',
+      name: 'Create Estate',
+      icon: 'house'
+    },
+    {
+      url: '/dashboard/manage-users',
+      name: 'Manage Users',
+      icon: 'contact_page'
+    }
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
+
+export interface NavLink{
+  url: string;
+  name: string;
+  icon: string;
+}
+

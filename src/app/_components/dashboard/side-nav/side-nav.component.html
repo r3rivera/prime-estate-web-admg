@@ -1,1 +1,14 @@
-<p>side-nav works!</p>
+<div class="menu-container">
+  <mat-list>
+    <div mat-subheader>Property Management</div>
+    <mat-list-item *ngFor="let navlink of navlinks">
+      <a matLine href="" routerLink={{navlink.url}} >{{ navlink.name }}</a>
+      <button mat-icon-button >
+         <mat-icon>{{navlink.icon}}</mat-icon>
+      </button>
+      <!--<div mat-line>{{ folder.updated | date }}</div>-->
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <div mat-subheader>Notes</div>
+  </mat-list>
+</div>

@@ -3,6 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,6 +20,7 @@ const materialModules = [
   MatSidenavModule,
   MatFormFieldModule,
   MatInputModule,
+  MatListModule,
   MatMenuModule,
   MatSliderModule,
   MatButtonModule,
