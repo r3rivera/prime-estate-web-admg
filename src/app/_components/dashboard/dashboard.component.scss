@@ -1,5 +1,4 @@
 .nav{
-
   &-icon{
     margin: 25px;
   }
@@ -9,4 +8,16 @@
   }
 }
 
+.side{
+
+  &-nav{
+    width: 250px;
+    border: 1px solid green;
+  }
+
+  &-container{
+    padding: 15px;
+    height: 100vh;
+  }
+}
 
