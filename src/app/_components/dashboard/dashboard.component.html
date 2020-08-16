@@ -1,7 +1,9 @@
-<section id="DashboardSection" #DashboardSection>
-  <h1>Dashboard Page</h1>
-
-  <!-- Dashboard Children Routes-->
-  <router-outlet></router-outlet>
-
-</section>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button class="nav-icon" aria-label="Navigation">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="nav-spacer"></span>
+    <r3app-profile-menu></r3app-profile-menu>
+  </mat-toolbar-row>
+</mat-toolbar>

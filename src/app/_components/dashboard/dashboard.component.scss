@@ -1,15 +1,11 @@
-#DashboardSection{
-  background: var(--surface-c);
-}
+.nav{
 
-.sidebar{
-  &-header{
-    box-sizing: border-box;
-    padding: 25px;
+  &-icon{
+    margin: 25px;
   }
 
-  &-menus{
-    width: 100%;
+  &-spacer{
+    flex: 1 1 auto;
   }
 }
 

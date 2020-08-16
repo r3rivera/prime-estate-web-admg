@@ -18,7 +18,7 @@ export class ProfileMenuComponent implements OnInit {
     return `${this._authservice.currentAuthUser.firstname} ${this._authservice.currentAuthUser.lastname}`;
   }
 
-  private logOut(): void {
+  public logOut(): void {
     if(this._authservice.logoutUser()){
       this._router.navigate(['/login']);
     }
