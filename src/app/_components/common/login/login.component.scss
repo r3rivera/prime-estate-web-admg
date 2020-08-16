@@ -18,13 +18,16 @@
       top: 50%;
 
       background-color: #fafafa;
+      border-radius: 3px;
+      box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 12px 17px 2px rgba(0, 0, 0, 0);
 
-      &-form{
-        padding: 3rem 3rem;
-      }
+      &-content{
+        padding: 30px 75px;
 
-      &-item{
-        width: 100%;
+        &-button {
+          margin-top: 15px;
+          width: 120px;
+        }
       }
 
     }
