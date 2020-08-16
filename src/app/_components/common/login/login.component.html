@@ -1,28 +1,19 @@
-<section id="LoginSection" class="login-container">
-  <div class="login-container-panel">
-    <div class="login-container-panel-content">
-      <form [formGroup]="loginForm" (ngSubmit)="onLoginUser()" class="login-container-panel-form">
-        <div>
-          <mat-form-field appearance="standard" style="width: 100%;">
+<section id="LoginSection" class="login-container" fxLayout="column" fxLayoutAlign="center center">
+  <div class="login-panel">
+      <form [formGroup]="loginForm" (ngSubmit)="onLoginUser()" class="login-container-panel-form" >
+          <mat-form-field appearance="standard" >
             <mat-label>Email Address</mat-label>
             <input placeholder="user@example.com" matInput formControlName="username" required>
             <mat-error *ngIf="isNotValidEmailFiled('username')">Not valid email.</mat-error>
             <mat-error *ngIf="isNotValidField('username')">This is required.</mat-error>
           </mat-form-field>
-        </div>
-        <div>
-          <mat-form-field appearance="standard" style="width: 100%;">
+          <mat-form-field appearance="standard">
             <mat-label>Password</mat-label>
             <input type="password" matInput formControlName="password" required>
             <mat-error *ngIf="isNotValidField('password')">This is required.</mat-error>
           </mat-form-field>
-        </div>
-        <div class="login-container-panel-content-button">
-          <button  mat-raised-button color="primary" type="submit" >Login</button>
-        </div>
+          <button  mat-raised-button color="primary" type="submit" class="login-panel-button">Login</button>
       </form>
-    </div>
-
   </div>
 </section>
 
