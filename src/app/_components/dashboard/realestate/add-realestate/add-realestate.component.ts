@@ -36,7 +36,17 @@ export class AddRealestateComponent implements OnInit {
       zip: new FormControl(null, [Validators.required]),
       country: new FormControl("US", [Validators.required]),
 
-      type: new FormControl("SFM", [Validators.required])
+      bed: new FormControl(0, [Validators.required, Validators.pattern("[0-9]*")]),
+      bath: new FormControl(0, [Validators.required, Validators.pattern("[0-9]*")]),
+      garage: new FormControl(0, [Validators.required, Validators.pattern("[0-9]*")]),
+
+      lot: new FormControl(null, [Validators.required]),
+      floor: new FormControl(null, [Validators.required]),
+      type: new FormControl("SFM", [Validators.required]),
+      featured: new FormControl(false),
+
+      price: new FormControl(null, [Validators.required]),
+      status: new FormControl("Active", [Validators.required])
     });
 
   }
