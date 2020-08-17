@@ -1,0 +1,23 @@
+#AddEstateContainer{
+  padding: 5px;
+}
+
+.main{
+    width: 100%;
+    //border: 1px solid green;
+
+    &-form, &-upload{
+      width: 50%;
+      padding: 15px;
+      //border: 1px solid pink;
+    }
+
+    &-form-item{
+      width: 33%;
+
+      &--checkbox{
+        margin: 20px 0;
+        //color:#303030 !important;
+      }
+    }
+}

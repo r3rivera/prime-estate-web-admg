@@ -2,7 +2,7 @@
   <mat-list>
     <div mat-subheader>Property Management</div>
     <mat-list-item *ngFor="let navlink of navlinks">
-      <a matLine href="" routerLink={{navlink.url}} >{{ navlink.name }}</a>
+      <a matLine href="" routerLink={{navlink.url}} routerLinkActive="active">{{ navlink.name }}</a>
       <button mat-icon-button >
          <mat-icon>{{navlink.icon}}</mat-icon>
       </button>
