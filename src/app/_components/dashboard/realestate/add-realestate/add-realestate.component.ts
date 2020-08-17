@@ -34,9 +34,9 @@ export class AddRealestateComponent implements OnInit {
       city: new FormControl(null, [Validators.required]),
       state: new FormControl(null, [Validators.required]),
       zip: new FormControl(null, [Validators.required]),
-      country: new FormControl({
-        "name":"United States", "code":"US"
-      }, [Validators.required])
+      country: new FormControl("US", [Validators.required]),
+
+      type: new FormControl("SFM", [Validators.required])
     });
 
   }
