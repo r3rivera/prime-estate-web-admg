@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +14,8 @@ import { AddRealestateComponent } from './_components/dashboard/realestate/add-r
 import { LandingComponent, NavigationComponent, HeroComponent, CatalogsComponent, TestimonialsComponent } from './_components/landing';
 import { ManageUsersComponent } from './_components/dashboard/manage-users/manage-users.component';
 
-
+import { JwtokenhandlerInterceptor } from './_interceptors/jwtokenhandler.interceptor';
+import { ErrorhandlerInterceptor } from './_interceptors/errorhandler.interceptor';
 
 
 
@@ -47,7 +48,10 @@ import { ManageUsersComponent } from './_components/dashboard/manage-users/manag
     AppRoutingModule,
     AppMaterialModule
   ],
-  providers: [],
+  providers: [
+    { provide : HTTP_INTERCEPTORS, useClass: JwtokenhandlerInterceptor, multi: true },
+    { provide : HTTP_INTERCEPTORS, useClass: ErrorhandlerInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
