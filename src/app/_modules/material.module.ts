@@ -13,6 +13,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -32,6 +34,8 @@ const materialModules = [
   MatButtonModule,
   MatButtonToggleModule,
   OverlayModule,
+  MatCardModule,
+  MatProgressBarModule,
   FlexLayoutModule
 
 ];
