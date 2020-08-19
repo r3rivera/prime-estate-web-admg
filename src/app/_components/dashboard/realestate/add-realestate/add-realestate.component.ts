@@ -115,9 +115,12 @@ export class AddRealestateComponent implements OnInit {
       }
     }
     console.log("Sending to the service...");
-
-
-    this._realEstateService.createProperty(realEstateRequest);
+    this._realEstateService.createProperty(realEstateRequest).subscribe(resp => {
+      console.log("Success...");
+      console.log(resp);
+    }, err => {
+      console.log("Error...");
+    });
   }
 
   /**
