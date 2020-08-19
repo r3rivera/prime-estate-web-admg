@@ -14,7 +14,7 @@ export class FileUploadService extends BaseService{
   upload(formData: FormData, api: string): Observable<any>{
 
 
-    const targetUri: string = "http://localhost:8080" + this.getApiEndpoint(api);
+    const targetUri: string = this.getApiEndpoint(api);
     console.log("Upload URI is " + targetUri);
 
     return this._httpClient.post<any>(targetUri, formData, {
