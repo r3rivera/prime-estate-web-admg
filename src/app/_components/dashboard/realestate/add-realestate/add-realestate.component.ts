@@ -1,10 +1,9 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   UtilityService,
   UStateCode,
   PropertyType,
   CountryCode,
-  FileUploadService,
 } from 'src/app/_services/shared';
 import {
   FormBuilder,
@@ -12,7 +11,8 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
-
+import { FileUpload } from 'src/app/_components/common';
+import { RealEstate, PropertyImage } from '../models/realestate.model';
 
 @Component({
   selector: 'r3app-add-realestate',
@@ -20,10 +20,6 @@ import {
   styleUrls: ['./add-realestate.component.scss'],
 })
 export class AddRealestateComponent implements OnInit {
-  constructor(
-    private _formBuilder: FormBuilder,
-    private _fileUploadService: FileUploadService
-  ) {}
 
   stateCode: UStateCode[];
   propertyType: PropertyType[];
@@ -32,8 +28,19 @@ export class AddRealestateComponent implements OnInit {
 
   estateForm: FormGroup;
 
+  private uploadedImage: FileUpload[];
+
+
+  constructor(
+    private _formBuilder: FormBuilder
+  ) {}
+
+
+
 
   ngOnInit(): void {
+
+    this.uploadedImage = [];
     this.stateCode = UtilityService.getStateNameCode();
     this.propertyType = UtilityService.getRealEstatePropertyType();
     this.propertyStatus = UtilityService.getRealEstatePropertyStatus();
@@ -72,8 +79,43 @@ export class AddRealestateComponent implements OnInit {
 
   onCreateProperty(): void {
     console.log('Creating property...');
-    console.log(JSON.stringify(this.estateForm.value));
+    const realEstateRequest:RealEstate = {
+      address: {
+        streetName1: this.estateForm.get('streetname1').value,
+        streetName2: this.estateForm.get('streetname2').value,
+        city: this.estateForm.get('city').value,
+        stateProvince: this.estateForm.get('state').value,
+        zipCode: this.estateForm.get('zip').value,
+        country: this.estateForm.get('country').value
+      },
+      amenities: [
+        {name:'Bed', value: this.estateForm.get('bed').value},
+        {name:'Bath', value: this.estateForm.get('bath').value},
+        {name:'Garage', value: this.estateForm.get('garage').value}
+      ],
+      images: [],
+      price: this.estateForm.get('price').value,
+      lot: this.estateForm.get('lot').value,
+      area: this.estateForm.get('floor').value,
+      type: this.estateForm.get('type').value,
+      estateStatus: this.estateForm.get('status').value,
+      featured: this.estateForm.get('featured').value
+    };
+
+    if(this.uploadedImage){
+      for( let img of this.uploadedImage){
+        realEstateRequest.images.push({
+          imageId: img.fileId
+        });
+      }
+    }
+    console.log("Sending to the service...");
+    console.log(realEstateRequest);
   }
 
+  onFileUploadEvent(images: FileUpload[]): void{
+    this.uploadedImage = images;
+    console.log("File upload data hand off...");
+  }
 
 }

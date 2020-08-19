@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { map, catchError } from 'rxjs/operators';
 import { HttpEventType, HttpErrorResponse } from '@angular/common/http';
 import { of } from 'rxjs';
@@ -16,7 +16,8 @@ export class UploadComponent implements OnInit {
   /* File Upload Parameters */
   @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef;
 
-  @Output('uploadResponse') uploadResponse: FileUpload[];
+  /** Notifies any component that uses the upload component */
+  @Output('FileUploadResponseEvent') uploadResponseEvent = new EventEmitter<FileUpload[]>();
 
   files = [];
 
@@ -49,7 +50,7 @@ export class UploadComponent implements OnInit {
           const resp:AppResponse = event.body;
           console.log(JSON.stringify(resp));
           if(resp.status == 0){
-            this.uploadResponse = resp.data;
+            this.uploadResponseEvent.emit(resp.data);
           }
         }
       }, error => {

@@ -128,7 +128,7 @@
     </div>
     <mat-divider [vertical]="true" fxHide.xs></mat-divider>
     <div class="main-upload">
-      <r3app-upload></r3app-upload>
+      <r3app-upload (FileUploadResponseEvent)="onFileUploadEvent($event)"></r3app-upload>
     </div>
   </div>
 </div>
