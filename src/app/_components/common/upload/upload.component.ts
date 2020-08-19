@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, Input } from '@angular/core';
 import { map, catchError } from 'rxjs/operators';
 import { HttpEventType, HttpErrorResponse } from '@angular/common/http';
 import { of } from 'rxjs';
@@ -19,6 +19,8 @@ export class UploadComponent implements OnInit {
   /** Notifies any component that uses the upload component */
   @Output('FileUploadResponseEvent') uploadResponseEvent = new EventEmitter<FileUpload[]>();
 
+  @Input('FileUploadApi') fileUploadApi: string;
+
   files = [];
 
   constructor(private _fileUploadService: FileUploadService, private _alertService: AlertService) {}
@@ -30,7 +32,7 @@ export class UploadComponent implements OnInit {
     const formData = new FormData();
     formData.append('file', file.data);
     file.inProgress = true;
-    this._fileUploadService.upload(formData, '/property/admin/catalog/upload').pipe(
+    this._fileUploadService.upload(formData, this.fileUploadApi).pipe(
         map((event) => {
           switch (event.type) {
             case HttpEventType.UploadProgress:

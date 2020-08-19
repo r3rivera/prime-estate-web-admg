@@ -12,7 +12,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { FileUpload } from 'src/app/_components/common';
-import { RealEstate, PropertyImage } from '../models/realestate.model';
+import { RealEstate } from '../models/realestate.model';
+import { RealEstateService } from 'src/app/_services/real-estate/real-estate.service';
+import { AlertService } from 'src/app/_services/notification/alert.service';
 
 @Component({
   selector: 'r3app-add-realestate',
@@ -31,9 +33,12 @@ export class AddRealestateComponent implements OnInit {
   private uploadedImage: FileUpload[];
 
 
-  constructor(
-    private _formBuilder: FormBuilder
-  ) {}
+  constructor(private _formBuilder: FormBuilder,
+    private _realEstateService: RealEstateService,
+    private _alertService: AlertService) {
+
+    }
+
 
 
 
@@ -110,12 +115,25 @@ export class AddRealestateComponent implements OnInit {
       }
     }
     console.log("Sending to the service...");
-    console.log(realEstateRequest);
+
+
+    this._realEstateService.createProperty(realEstateRequest);
   }
 
+  /**
+   *
+   * @param images Captures the event provided by the component emitting a file upload.
+   */
   onFileUploadEvent(images: FileUpload[]): void{
-    this.uploadedImage = images;
+    for(let img of images){
+      this.uploadedImage.push(img);
+    }
+
     console.log("File upload data hand off...");
   }
 
+
+  fileUploadApi(): string{
+    return '/property/admin/catalog/upload';
+  }
 }
