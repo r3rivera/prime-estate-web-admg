@@ -12,15 +12,35 @@ export class RealEstateService extends BaseService{
     super();
   }
 
+  /**
+   * Creates a new property.
+   *
+   * @param estateRequest
+   */
   createProperty(estateRequest: RealEstate): Observable<RealEstate> {
     console.log("Servicing the creation of property...");
 
     const apiUri = this.getApiEndpoint('/property/admin/catalog');
-    return this._httpClient.post<any>(apiUri, estateRequest).pipe(map( resp => {
-      if(resp.status == 0 && resp.data){
-        return resp.data;
+    return this._httpClient.post<any>(apiUri, estateRequest)
+    .pipe(map( resp => {
+          if(resp.status == 0 && resp.data){
+            return resp.data;
 
-      }
-    } ));
+          }
+        })
+    );
   }
+
+
+  /**
+   * Gets the details of the property by its estate Id.
+   * @param estateId
+   */
+  getProperty(estateId: string): Observable<RealEstate> {
+    const apiUri = this.getApiEndpoint(`/property/admin/catalog/${estateId}`);
+
+    return null;
+  }
+
+
 }

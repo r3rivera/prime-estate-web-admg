@@ -14,12 +14,12 @@ export class SideNavComponent implements OnInit {
       icon: 'home'
     },
     {
-      url: '/dashboard/create-estates',
+      url: '/dashboard/create-estate',
       name: 'Create Estate',
       icon: 'house'
     },
     {
-      url: '/dashboard/manage-users',
+      url: '/dashboard/manage-user',
       name: 'Manage Users',
       icon: 'contact_page'
     }

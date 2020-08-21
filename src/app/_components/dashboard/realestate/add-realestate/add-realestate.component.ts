@@ -15,6 +15,7 @@ import { FileUpload } from 'src/app/_components/common';
 import { RealEstate } from '../models/realestate.model';
 import { RealEstateService } from 'src/app/_services/real-estate/real-estate.service';
 import { AlertService } from 'src/app/_services/notification/alert.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'r3app-add-realestate',
@@ -33,11 +34,8 @@ export class AddRealestateComponent implements OnInit {
   private uploadedImage: FileUpload[];
 
 
-  constructor(private _formBuilder: FormBuilder,
-    private _realEstateService: RealEstateService,
-    private _alertService: AlertService) {
-
-    }
+  constructor(private _formBuilder: FormBuilder, private _realEstateService: RealEstateService,
+    private _route: ActivatedRoute, private _router: Router, private _alertService: AlertService) {}
 
 
 
@@ -118,6 +116,9 @@ export class AddRealestateComponent implements OnInit {
     this._realEstateService.createProperty(realEstateRequest).subscribe(resp => {
       console.log("Success...");
       console.log(resp);
+
+      this._router.navigate(['/manage-estate', resp.realEstateId], {relativeTo: this._route.parent});
+
     }, err => {
       console.log("Error...");
     });
