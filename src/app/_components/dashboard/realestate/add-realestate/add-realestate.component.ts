@@ -117,7 +117,7 @@ export class AddRealestateComponent implements OnInit {
       console.log("Success...");
       console.log(resp);
 
-      this._router.navigate(['/manage-estate', resp.realEstateId], {relativeTo: this._route.parent});
+      this._router.navigate(['manage-estate', resp.realEstateId], {relativeTo: this._route.parent});
 
     }, err => {
       console.log("Error...");

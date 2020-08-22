@@ -38,8 +38,13 @@ export class RealEstateService extends BaseService{
    */
   getProperty(estateId: string): Observable<RealEstate> {
     const apiUri = this.getApiEndpoint(`/property/admin/catalog/${estateId}`);
+    return this._httpClient.get<any>(apiUri).pipe(map( resp => {
+          if(resp.status == 0 && resp.data){
+            return resp.data;
 
-    return null;
+          }
+        })
+    );
   }
 
 
