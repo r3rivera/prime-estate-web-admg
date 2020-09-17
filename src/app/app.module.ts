@@ -9,12 +9,13 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppMaterialModule } from './_modules/material.module';
 import { DashboardComponent, SideNavComponent, ProfileMenuComponent, OverviewComponent } from './_components/dashboard';
-import { LoginComponent, ContactusComponent, SignupComponent, AlertComponent, UploadComponent, Error404Component } from './_components/common';
+import { LoginComponent, ContactusComponent, SignupComponent, AlertComponent, UploadComponent, Error404Component, SliderComponent } from './_components/common';
 import { LandingComponent, NavigationComponent, HeroComponent, CatalogsComponent, TestimonialsComponent } from './_components/landing';
 import { ManageUsersComponent } from './_components/dashboard/manage-users/manage-users.component';
 
 import { JwtokenhandlerInterceptor, ErrorhandlerInterceptor } from './_interceptors';
 import { RealestateComponent,AddRealestateComponent,EditRealestateComponent } from './_components/dashboard/realestate';
+
 
 
 
@@ -40,7 +41,8 @@ import { RealestateComponent,AddRealestateComponent,EditRealestateComponent } fr
     SideNavComponent,
     UploadComponent,
     EditRealestateComponent,
-    Error404Component
+    Error404Component,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
