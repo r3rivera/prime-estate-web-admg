@@ -1,0 +1,15 @@
+<section id="PaymentSection" >
+  <div>
+    <h1>Payment</h1>
+    <form #checkout="ngForm" (ngSubmit)="onSubmit(checkout)" class="checkout">
+      <div class="form-row">
+        <label for="card-info">Card Info</label>
+        <div id="card-info" #cardInfo></div>
+      </div>
+      <button type="submit">Submit Payment</button>
+    </form>
+  </div>
+  <div>
+    <pre>{{response | json}}</pre>
+  </div>
+</section>

@@ -15,6 +15,7 @@ import { ManageUsersComponent } from './_components/dashboard/manage-users/manag
 
 import { JwtokenhandlerInterceptor, ErrorhandlerInterceptor } from './_interceptors';
 import { RealestateComponent,AddRealestateComponent,EditRealestateComponent } from './_components/dashboard/realestate';
+import { PaymentComponent } from './_components/payment/payment.component';
 
 
 
@@ -42,7 +43,8 @@ import { RealestateComponent,AddRealestateComponent,EditRealestateComponent } fr
     UploadComponent,
     EditRealestateComponent,
     Error404Component,
-    SliderComponent
+    SliderComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

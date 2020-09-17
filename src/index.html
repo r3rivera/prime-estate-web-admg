@@ -17,5 +17,10 @@
 </head>
 <body>
   <r3app-root></r3app-root>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script type="text/javascript">
+    const stripe = Stripe('pk_test_51GvW6EEBPRDF8hik5DoBuzNAvdObXi9xd9BpgMGqzQVS9Ail7VK84uvbxhq4CDaKuaVX7Y3jSQ6AFXBtRb5Z9Wjt00cEd4sa2j'); // use your test publishable key
+    const elements = stripe.elements();
+  </script>
 </body>
 </html>
