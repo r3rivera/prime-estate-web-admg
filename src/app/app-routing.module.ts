@@ -8,7 +8,7 @@ import { OverviewComponent } from './_components/dashboard';
 import { AuthzGuard } from './_services/security/authz.guard';
 import { ManageUsersComponent } from './_components/dashboard/manage-users';
 import { RealestateComponent, AddRealestateComponent, EditRealestateComponent } from './_components/dashboard/realestate';
-import { PaymentComponent } from './_components/payment/payment.component';
+import { CheckoutComponent } from './_components/payment';
 
 
 const routes: Routes = [
@@ -21,7 +21,7 @@ const routes: Routes = [
     { path: '', component: OverviewComponent },
   ], canActivate: [ AuthzGuard ], data:{roles:["4SSN-APP-PROPERTY-MANAGER","4SSN-APP-SUPER-ADMIN",,"4SSN-APP-PROP-OWNER"]} },
   { path: 'login', component: LoginComponent },
-  { path: 'payment', component: PaymentComponent},
+  { path: 'payment', component: CheckoutComponent},
   { path: 'signup', component: SignupComponent },
   { path: 'contactus', component: ContactusComponent },
   { path: '', component: LandingComponent },

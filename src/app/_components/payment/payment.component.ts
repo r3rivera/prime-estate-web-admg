@@ -47,6 +47,8 @@ export class PaymentComponent implements AfterViewInit, OnDestroy {
     } else {
       console.log('Success!', token);
       this.response = token;
+
+
     }
   }
 
