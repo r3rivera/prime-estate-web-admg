@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertService } from 'src/app/_services/notification/alert.service';
 import { PaymentService } from 'src/app/_services/shared';
 
 @Component({
@@ -8,7 +9,7 @@ import { PaymentService } from 'src/app/_services/shared';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(private _paymentService:PaymentService) { }
+  constructor(private _paymentService:PaymentService, private _alertService: AlertService) { }
 
   ngOnInit(): void {
   }
@@ -18,10 +19,10 @@ export class CheckoutComponent implements OnInit {
     this._paymentService.getCheckoutSession("").subscribe(
       (data) => {
         console.log("Checkout Session is " + data);
-        return stripe.redirectToCheckout({ sessionId: data });
+        stripe.redirectToCheckout({ sessionId: data });
       },
       (error) => {
-
+        console.error(error);
       }
     );
 

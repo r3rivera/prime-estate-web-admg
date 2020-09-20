@@ -11,19 +11,28 @@ export class PaymentService extends BaseService{
 
   getCheckoutSession(productId: string): Observable<string>{
 
-    const url: string = this.getApiEndpoint("/payment/checkout");
+    const url: string = this.getApiEndpoint('/payment/checkout');
     console.log("Getting stripe checkout session! URL " + url );
 
     return this._httpClient.get<any>(url,{}).pipe(map(resp => {
-      if(resp.status === 0){
-        return resp.data;
+      if(resp.status !== 0){
+        throw Error("Unexpected response found!");
       }
-
-      return "";
-    }))
+     return resp.data;
+    }));
   }
 
+  makeCharge(payment: any): Observable<boolean>{
 
+    const url: string = this.getApiEndpoint('/payment/charge');
+    console.log("Processing a card charge! URL " + url);
+    return this._httpClient.post<any>(url, payment).pipe(map(resp => {
+      if(resp.status !== 0){
+        throw Error("Unexpected response charge found!");
+      }
+      return resp.data;
+    }));
+  }
 
 
 }

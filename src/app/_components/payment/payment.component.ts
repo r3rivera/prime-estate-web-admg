@@ -1,5 +1,8 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AlertService } from 'src/app/_services/notification/alert.service';
+import { PaymentService } from 'src/app/_services/shared';
+import { PaymentRequest } from './model/payment';
 
 @Component({
   selector: 'r3app-payment',
@@ -17,7 +20,7 @@ export class PaymentComponent implements AfterViewInit, OnDestroy {
 
   response: any;
 
-  constructor(private cd: ChangeDetectorRef) {}
+  constructor(private cd: ChangeDetectorRef, private _paymentService:PaymentService, private _alertService: AlertService) {}
 
   ngAfterViewInit() {
     this.card = elements.create('card');
@@ -45,9 +48,25 @@ export class PaymentComponent implements AfterViewInit, OnDestroy {
     if (error) {
       console.log('Something is wrong:', error);
     } else {
-      console.log('Success!', token);
-      this.response = token;
 
+      const payment:PaymentRequest = {
+        productIdentifier: '',
+        token: token.id,
+        clientIp: token.client_ip,
+        created: token.created,
+        lastFour: token.card['last4'],
+        cardId: token.card['id'],
+        cardType: token.card['brand']
+      };
+
+      this._paymentService.makeCharge(payment).subscribe(
+        (data)=>{
+          this.response = data;
+        },
+        (error)=>{
+          console.log("Error handling the charges!");
+        }
+      );
 
     }
   }
