@@ -23,7 +23,7 @@ export class RealEstateService extends BaseService{
     const apiUri = this.getApiEndpoint('/property/admin/catalog');
     return this._httpClient.post<any>(apiUri, estateRequest)
     .pipe(map( resp => {
-          if(resp.status == 0 && resp.data){
+          if(resp.status === 0 && resp.data){
             return resp.data;
 
           }
@@ -39,7 +39,7 @@ export class RealEstateService extends BaseService{
   getProperty(estateId: string): Observable<RealEstate> {
     const apiUri = this.getApiEndpoint(`/property/admin/catalog/${estateId}`);
     return this._httpClient.get<any>(apiUri).pipe(map( resp => {
-          if(resp.status == 0 && resp.data){
+          if(resp.status === 0 && resp.data){
             return resp.data;
 
           }

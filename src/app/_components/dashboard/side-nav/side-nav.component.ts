@@ -19,7 +19,7 @@ export class SideNavComponent implements OnInit {
       icon: 'house'
     },
     {
-      url: '/dashboard/manage-user',
+      url: '/dashboard/manage-users',
       name: 'Manage Users',
       icon: 'contact_page'
     }

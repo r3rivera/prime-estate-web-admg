@@ -15,7 +15,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-
+import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 
@@ -36,6 +36,7 @@ const materialModules = [
   OverlayModule,
   MatCardModule,
   MatProgressBarModule,
+  MatTableModule,
   FlexLayoutModule
 
 ];
