@@ -1,1 +1,34 @@
-<span>Manage Estates</span>
+<div id="EstateContainer">
+  <table mat-table [dataSource]="propertyAdresses"
+        class="mat-elevation-z0">
+
+        <ng-container matColumnDef="street">
+          <mat-header-cell *matHeaderCellDef>Street</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.address.streetName1}} {{row.address.streetName2}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="city">
+          <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.address.city}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="state">
+          <mat-header-cell *matHeaderCellDef>State</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.address.stateProvince}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="zip">
+          <mat-header-cell *matHeaderCellDef>Zip Code</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.address.zipCode}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+          <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.price | currency}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="['street', 'city', 'state', 'zip', 'price']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['street', 'city', 'state', 'zip', 'price']"></mat-row>
+
+  </table>
+</div>

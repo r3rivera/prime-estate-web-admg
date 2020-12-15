@@ -31,6 +31,21 @@ export class RealEstateService extends BaseService{
     );
   }
 
+  /**
+   * Gets the details of the property
+   * @param isManaged
+   * @param isDetailed
+   */
+  getProperties(isManaged:boolean, isDetailed: boolean): Observable<RealEstate[]>{
+    const apiUri = this.getApiEndpoint(`/property/admin/catalog?isManaged=${isManaged}&isComplete=${isDetailed}`);
+    return this._httpClient.get<any>(apiUri).pipe(map( resp => {
+        if(resp.status === 0 && resp.data){
+          return resp.data;
+        }
+      })
+    );
+  }
+
 
   /**
    * Gets the details of the property by its estate Id.
